@@ -1,4 +1,4 @@
-# mager-frontend-design
+# frontend-design
 
 A frontend design skill for [Claude Code](https://claude.com/claude-code) that builds **hot, sleek, sexy, usable, fun, and addictive** interfaces.
 
@@ -7,7 +7,7 @@ Dark-first themes, terminal-inspired typography, neon accents, tactile micro-int
 ## Install
 
 ```bash
-npx skills add mager/mager-frontend-design
+npx skills add mager/frontend-design
 ```
 
 ## What it does
