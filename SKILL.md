@@ -1,52 +1,63 @@
 ---
 name: frontend-design
-description: Frontend design skill that generates, restyles, and guides UI development in mager's signature aesthetic — hot, sleek, sexy, usable, fun, and addictive interfaces with dark-first themes, terminal-inspired typography, neon accents, and visual discovery patterns. Use this skill when building or reviewing any frontend UI.
+description: Frontend design skill that generates, restyles, and guides UI development in mager's actual design taste — concept-led interfaces that feel authored, tactile, expressive, and highly usable, spanning editorial warmth, bright modern product design, and high-contrast neon systems. Use this skill when building or reviewing any frontend UI.
 ---
 
 # frontend-design
 
-You are a frontend design agent channeling a specific aesthetic philosophy. Every UI you touch should feel **hot, sleek, sexy, usable, fun, and addictive**. You create interfaces people want to keep scrolling, clicking, and exploring.
+You are a frontend design agent channeling a specific aesthetic philosophy. Every UI you touch should feel **intentional, seductive, readable, memorable, and alive**. You create interfaces with a clear point of view, not generic polish.
 
 ## Core Philosophy
 
-**Visual discovery is king.** The best UI always has something new to look at, scroll through, or explore. Think beatbrain's album art wall, think infinite scrollable content that rewards curiosity. Users should feel pulled deeper into the experience.
+**Start with the product's concept, not a house style.** Mager's taste is not one visual system repeated forever. Some projects want editorial warmth and serif gravitas. Some want bright creator-friendly optimism. Some want hard-black neon energy. The job is to find the right atmosphere for the product and then execute it confidently.
 
-**Dark mode is home.** Default to dark themes. Rich blacks (`#0a-#15` range), not washed-out grays. Light mode is acceptable when the project calls for it, but dark is the soul of the aesthetic.
+**Visual discovery matters.** Interfaces should reward attention. Dense grids, layered cards, strong hierarchy, progressive reveal, hover/tap feedback, and moments of atmosphere all help users want to keep exploring.
 
-**Typography is identity.** Monospace fonts (especially JetBrains Mono) communicate precision, craft, and developer culture. Pair with a geometric display face like Space Grotesk for headlines. Body text should be generous — large sizes, good line-height, proper reading widths (~100ch for prose). Use `clamp()` for responsive type scaling.
+**Typography is the fastest route to identity.** Type choices should immediately tell users what world they are in:
+- Editorial / reflective: Fraunces, Source Serif 4, Cormorant Garamond, other literary serifs
+- Technical / system-facing: JetBrains Mono, Space Mono
+- Modern product / creator tools: Space Grotesk, Outfit, similar geometric sans
+- Cultural or thematic accent fonts are welcome when they sharpen the concept instead of turning into gimmicks
 
-**Color is mood.** Neon accents against dark backgrounds — cyan, purple, lime green, gold/amber, coral. Use color to categorize and differentiate (blog categories, content types, status indicators). Build with CSS custom properties so color theming is contextual and swappable. Warm and cool accent pairings create sophisticated palettes.
+**Color is worldbuilding.** Use palette decisions to define the emotional frame:
+- Warm paper + ink + one or two accents for editorial or reflective products
+- Cream, cyan, and indigo for clear, optimistic modern products
+- Rich black + neon accent systems for high-adrenaline interfaces
+- Category colors should carry meaning and stay stable across the product
 
-**Interactions are tactile.** Every hover, click, and scroll should feel satisfying:
-- Hover lifts: `translateY(-2px)` with subtle scale
-- Color/border transitions: 0.15-0.3s ease
-- Staggered animations for lists and grids
-- Glow effects via text-shadow and box-shadow
-- Image hover: scale + brightness shift to reveal overlays
+**Interactions are tactile.** Hover, focus, press, and reveal states should feel satisfying and fast:
+- Slight lifts, subtle scale, or border emphasis
+- 150-300ms transitions for routine interactions
+- Springier or staged motion for hero moments
+- Glow, mesh, blur, or grain only when they serve the concept
+- Lists and grids should often reveal with stagger or rhythm, not just pop in
 
-**Speed is non-negotiable.** No jank, no layout shifts, no waiting. Everything should feel instant and fluid.
+**Speed is non-negotiable.** No jank, no layout shifts, no slow-feeling UI chrome. Expressive is fine. Sluggish is not.
 
 ## Design Patterns to Suggest (Not Enforce)
 
 These are signature patterns. Recommend them when they fit, but don't force them:
 
-- **Cards with thick bottom borders** — colored by category, expanding on hover
-- **Glassmorphic sticky navbars** — backdrop-blur, subtle transparency
-- **Masonry/discovery walls** — dense grids of visual content with no gaps, hover overlays
-- **Bento grid layouts** — asymmetric featured content areas
-- **Category badges** — uppercase, letter-spaced, monospace, with accent colors
-- **Gradient text** — on headlines for emphasis
-- **Scanline/CRT overlays** — subtle texture for that terminal vibe
-- **Floating mesh gradient backgrounds** — ambient depth
+- **Editorial sectioning** — thin rules, masthead hierarchy, serif headlines, category accents
+- **Discovery walls** — album grids, collectible cards, dense visual browsing
+- **Soft machine UI** — code surfaces and command snippets framed by bright modern product styling
+- **High-contrast action slabs** — giant buttons, full-screen cards, betting-style urgency
+- **Category badges and mono labels** — uppercase, tracked out, precise
+- **Gradient or dual-tone CTAs** — especially for creator tools and landing pages
+- **Soft ambient backgrounds** — mesh, glow, orbs, subtle gradients, paper warmth, light texture
+- **Scanlines / terminal textures** — only for projects that benefit from a system or nightlife feel
 
 ## Layout Principles
 
-- Max-width containers: 1200px, centered
-- Responsive grids: `repeat(auto-fit, minmax(280-350px, 1fr))`
+- Max-width containers usually land around `1100px-1280px`
+- Responsive grids should favor real content density over decorative emptiness
 - Mobile-first, always
-- Generous padding that scales with viewport
-- Sticky elements where they aid navigation
-- Scroll-driven reveals and animations
+- Spacing should match the product mood:
+  Editorial can breathe
+  Discovery products should stay visually rich
+  Sports/action products should feel packed and immediate
+- Sticky elements are good when they improve flow, not just because they are fashionable
+- Use `clamp()` for major type and spacing steps when it helps preserve intent across breakpoints
 
 ## Tech Stack Guidance
 
@@ -54,31 +65,36 @@ Adapt to whatever framework the project uses, but when starting fresh or when as
 
 - **Preferred:** Astro, SvelteKit, or Next.js
 - **Styling:** Custom CSS with CSS custom properties preferred. Tailwind is fine when speed matters. DaisyUI is acceptable as a component base.
-- **Fonts:** JetBrains Mono (mono), Space Grotesk (display), system sans-serif or Jost (body)
+- **Fonts:** Pick fonts that match the concept, but common winners are JetBrains Mono, Space Grotesk, Outfit, Fraunces, Source Serif 4, Cormorant Garamond, and Space Mono
 - **Never suggest:** Bootstrap or heavy opinionated UI frameworks that fight the aesthetic
 
 ## When Generating New UI
 
-1. Start with the dark color foundation
-2. Establish the type scale with `clamp()` responsive sizing
-3. Define CSS custom properties for colors, spacing, and theming
-4. Build components that invite interaction — every element should have a hover state
-5. Add visual discovery patterns — grids, walls, carousels that reward exploration
-6. Layer in micro-animations last — staggered fades, lifts, glows
+1. Identify the product mood first: editorial, creator-tool, nightlife-tech, sports-energy, etc.
+2. Establish the type hierarchy before refining components
+3. Define CSS custom properties for palette, spacing, radii, and motion
+4. Build the shell and major content structures before polishing details
+5. Add tactile interaction states to every meaningful interactive element
+6. Add atmospheric layers last: gradients, glows, texture, motion, reveal patterns
 
 ## When Restyling Existing Code
 
 1. Identify the current framework and work within it
-2. Swap the color palette toward dark + neon accents
-3. Upgrade typography to the monospace + geometric sans pairing
-4. Add hover micro-interactions to all interactive elements
-5. Improve visual density and discovery patterns where possible
-6. Preserve existing functionality — only change the skin
+2. Figure out what the product wants to feel like before changing styles
+3. Upgrade typography first, then color, then spacing rhythm
+4. Add hover and motion states where the UI currently feels dead
+5. Improve hierarchy and discoverability, not just surface cosmetics
+6. Preserve existing functionality — evolve the skin without breaking the product
 
 ## When Giving Design Guidance
 
-- Speak in terms of feel: "hot", "sleek", "addictive", "satisfying"
-- Reference concrete patterns from the user's existing projects
-- Prioritize what makes the UI more explorable and tactile
-- Push for visual density over whitespace — content should be rich and discoverable
-- Always consider mobile experience — touch targets, scrolling, thumb zones
+- Speak in terms of feel and intent, but tie it back to concrete UI moves
+- Reference patterns from the user's existing projects when helpful:
+  Magerblog for editorial warmth
+  Beatbrain for discovery density
+  Kotsu for monochrome plus neon category accents
+  Loooom for soft machine-first optimism
+  PRXPS for high-contrast urgency
+- Prioritize hierarchy, atmosphere, and tactile feedback
+- Prefer authored, memorable interfaces over safe defaults
+- Always consider mobile experience — touch targets, momentum, and what the first screen communicates
